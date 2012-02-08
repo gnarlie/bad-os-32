@@ -1,2 +1,3 @@
 *.o
 src/kernel
+bochsout.txt

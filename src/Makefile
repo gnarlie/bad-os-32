@@ -5,9 +5,10 @@
 
 SOURCES=boot.o main.o
 
-CFLAGS=-nostdlib -nostdinc -fno-builtin -fno-stack-protector
-LDFLAGS=-Tlink.ld 
-ASFLAGS=-felf64
+CFLAGS=-nostdlib -nostdinc -fno-builtin -fno-stack-protector -m32
+LDFLAGS=-Tlink.ld -melf_i386
+ASFLAGS=-felf32
+#ASFLAGS=-felf64
 
 all: $(SOURCES) link 
 
