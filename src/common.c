@@ -16,3 +16,14 @@ u16int inw(u16int port) {
     return ret;
 }
 
+void panic(const char * err, int line, const char * file) {
+    monitor_write("problem in line ");
+    monitor_write_dec(line);
+    monitor_write(" of file " );
+    monitor_write(file);
+    monitor_put('.');
+    monitor_put('\n');
+    monitor_write(err);
+    while(1) ; // never return!
+}
+

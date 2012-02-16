@@ -17,4 +17,8 @@ void outb(u16int port, u8int value);
 u8int inb(u16int port);
 u16int inw(u16int port);
 
+void panic(const char * e, int line, const char * file);
+
+#define PANIC(x) panic(x, __LINE__, __FILE__);
+
 #endif

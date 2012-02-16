@@ -1,3 +1,4 @@
 *.o
 src/kernel
 bochsout.txt
+*.swp
