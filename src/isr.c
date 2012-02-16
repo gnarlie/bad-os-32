@@ -24,12 +24,11 @@ void irq_handler(registers_t regs) {
         outb(0xa0, 0x20); //reset signal to slave PIC
     outb(0x20, 0x20); //reset signal to master PIC
 
-    if (regs.int_no != 0x20) {
-        monitor_write("IRQ handler 0x");
-        monitor_write_hex(regs.int_no);
-        monitor_put('\n');
-    }
-
+//    if (regs.int_no != 0x20) {
+//        monitor_write("IRQ handler 0x");
+//        monitor_write_hex(regs.int_no);
+//        monitor_put('\n');
+//    }
 
     if (interrupt_handlers[regs.int_no]) {
         isr_t handler = interrupt_handlers[regs.int_no];

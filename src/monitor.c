@@ -133,6 +133,11 @@ void monitor_write_hex(u32int n) {
 }
 
 void monitor_write_dec(u32int n) {
+    if (!n) {
+        monitor_put('0');
+        return;
+    }
+
     u32int divisor = 1000000000;
     int go = 0;
     while(divisor) {
